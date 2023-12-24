@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 2</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+
+<body>
+    <div class="inputFileDiv">
+        <p>Select File :&nbsp;&nbsp;</p>
+        <input type="file" name="inputFile" id="inputFile" accept=".json,.csv">
+        <p>Only JSON and CSV Files</p>
+    </div>
+
+    <div class="container">
+        <div class="step2">
+            <label for="format">Format:</label>
+            <select id="format" name="format" class="disable" disabled>
+                <option value="csv">CSV</option>
+            </select>
+            <br>
+            <label for="fileType">File Type:</label>
+            <select id="fileType" name="fileType" class="disable" disabled>
+                <!-- <option value="json">JSON</option> -->
+                <option value="csv">CSV</option>
+            </select>
+            <br>
+            <label for="encoding">Character Encoding:</label>
+            <select id="encoding" name="encoding" class="disable" disabled>
+                <option value="utf-8">UTF-8</option>
+                <option value="utf-16">UTF-16</option>
+                <!-- Add more encoding options as needed -->
+            </select>
+            <br>
+            <label for="delimiter">Delimiter:</label>
+            <input type="text" id="delimiter" name="delimiter" class="disable" disabled placeholder="e.g., ,">
+            <br>
+            <label for="hasHeader">Has Header:</label>
+            <select type="checkbox" id="hasHeader" name="hasHeader" class="disable" disabled>
+                <option value="true">Yes</option>
+                <option value="false">No</option>
+            </select>
+            <br>
+            <!-- <button onclick="importData()">Import Data</button> -->
+            <button id="processData">Process</button>
+        </div>
+
+    </div>
+
+
+    <div id="displayOptions">
+        <div>
+            <label for="availableFields">Available Fields</label>
+            <select id="availableFields" multiple></select>
+        </div>
+
+        <button onclick="toSelect()">>></button>
+        <button onclick="toDisplay()">&lt;&lt;</button>
+        <div>
+            <label for="displayFields">Fields to Display</label>
+            <select id="displayFields" multiple></select>
+        </div>
+    </div>
+    <div id="displayButton">
+        <button onclick="displayData()">Display Data</button>
+    </div>
+
+    <div id="prodTable">
+
+        <table id="productTable">
+            <thead>
+                <tr>
+
+                </tr>
+            </thead>
+            <tbody id="productList"></tbody>
+        </table>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
